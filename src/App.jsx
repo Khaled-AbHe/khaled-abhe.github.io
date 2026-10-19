@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import PixelGrid from "./PixelGrid.jsx";
-import { profile, projects, skills, about, contact } from "./data.js";
+import PixelGrid from "./components/PixelGrid.jsx";
+import { profile, projects, skills, about, contact } from "./assets/data.js";
 
 const GRADIENTS = [
   ["#d6336c", "#7c3aed"],

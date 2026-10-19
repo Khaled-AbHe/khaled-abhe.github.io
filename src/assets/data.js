@@ -14,7 +14,9 @@ export const projects = [
       "A replica of U-Haul’s rental service, built as a full-stack app with a React and TypeScript frontend and a NestJS backend, run together with Docker Compose.",
     tags: ["React", "TypeScript", "NestJS", "Docker"],
     image: "",
-    links: [{ label: "Source code", url: "https://github.com/Khaled-AbHe/U-Owl" }],
+    links: [
+      { label: "Source code", url: "https://github.com/Khaled-AbHe/U-Owl" },
+    ],
   },
   {
     title: "FRND-ArcaneGrimoire",
@@ -23,7 +25,10 @@ export const projects = [
     tags: ["React", "TypeScript", "D&D"],
     image: "",
     links: [
-      { label: "Source code", url: "https://github.com/Khaled-AbHe/FRND-ArcaneGrimoire" },
+      {
+        label: "Source code",
+        url: "https://github.com/Khaled-AbHe/FRND-ArcaneGrimoire",
+      },
     ],
   },
   {
@@ -34,17 +39,30 @@ export const projects = [
     image: "",
     links: [
       { label: "Play it", url: "" }, // to put itch.io link later
-      { label: "Source code", url: "https://github.com/Khaled-AbHe/ProjetFinale" },
+      {
+        label: "Source code",
+        url: "https://github.com/Khaled-AbHe/ProjetFinale",
+      },
     ],
   },
 ];
 
 export const skills = [
-  { title: "Languages", items: ["C#", "Java", "JavaScript", "TypeScript", "Python", "HTML"] },
+  {
+    title: "Languages",
+    items: ["C#", "Java", "JavaScript", "TypeScript", "Python", "HTML"],
+  },
   { title: "Game dev and design", items: ["Unity", "Godot", "GIMP", "Figma"] },
   {
     title: "Web and tools",
-    items: ["React", "Node.js", "Docker", "Git", "SQL", "Jellyfin media server at home"],
+    items: [
+      "React",
+      "Node.js",
+      "Docker",
+      "Git",
+      "SQL",
+      "Jellyfin media server at home",
+    ],
   },
 ];
 
@@ -57,7 +75,10 @@ export const contact = {
   email: "khaledabouhechmeh@outlook.com",
   socials: [
     { label: "GitHub", url: "https://github.com/Khaled-AbHe" },
-    { label: "LinkedIn", url: "https://www.linkedin.com/in/khaled-abou-hechmeh-b77642316/" },
+    {
+      label: "LinkedIn",
+      url: "https://www.linkedin.com/in/khaled-abou-hechmeh-b77642316/",
+    },
     { label: "itch.io", url: "" },
   ],
 };
