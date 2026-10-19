@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
-
-const S = 28;
+import { S } from "../../assets/constants";
 
 export default function PixelGrid() {
   const ref = useRef(null);
@@ -67,7 +66,8 @@ export default function PixelGrid() {
     window.addEventListener("resize", size);
     parent.addEventListener("pointermove", paint);
     parent.addEventListener("pointerdown", paint);
-    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) draw();
+    draw();
+    // if (!matchMedia("(prefers-reduced-motion: reduce)").matches) draw();
 
     return () => {
       cancelAnimationFrame(raf);

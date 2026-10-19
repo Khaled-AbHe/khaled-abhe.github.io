@@ -1,6 +1,5 @@
 export const profile = {
   name: "Khaled Abou Hechmeh",
-  role: "Aspiring Game Developer",
   headline: ["I build games", "and learn how they work."],
   intro:
     "Hi, I’m Khaled, a computer science student at Cégep Marie-Victorin. I’m learning Unity and Godot, and I’m looking for an internship in game development.",
@@ -82,3 +81,5 @@ export const contact = {
     { label: "itch.io", url: "" },
   ],
 };
+
+export const socials = contact.socials.filter((s) => s.url);
