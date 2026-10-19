@@ -1,0 +1,255 @@
+:root {
+  --bg: #f4f3fb;
+  --surface: #ffffff;
+  --text: #1b1936;
+  --muted: #58557a;
+  --line: #d9d6ee;
+  --accent: #d6336c;
+  --accent2: #0e7490;
+  --cell: 214, 51, 108;
+  --head: "Pixelify Sans", "Courier New", monospace;
+  --body: "DM Sans", system-ui, sans-serif;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #171629;
+    --surface: #221f3a;
+    --text: #ece9ff;
+    --muted: #a9a5cf;
+    --line: #38345c;
+    --accent: #ff5d8f;
+    --accent2: #6ee7f9;
+    --cell: 255, 93, 143;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #171629;
+  --surface: #221f3a;
+  --text: #ece9ff;
+  --muted: #a9a5cf;
+  --line: #38345c;
+  --accent: #ff5d8f;
+  --accent2: #6ee7f9;
+  --cell: 255, 93, 143;
+}
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 1.0625rem/1.6 var(--body);
+}
+a {
+  color: inherit;
+}
+:focus-visible {
+  outline: 3px solid var(--accent2);
+  outline-offset: 3px;
+}
+.wrap {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0;
+}
+nav .logo {
+  font: 700 1.25rem var(--head);
+  text-decoration: none;
+}
+nav ul {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul a {
+  text-decoration: none;
+  color: var(--muted);
+}
+nav ul a:hover {
+  color: var(--text);
+}
+#theme {
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.6rem;
+  cursor: pointer;
+  font: inherit;
+}
+
+.hero {
+  position: relative;
+  min-height: 26rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+}
+#grid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+}
+.hero-copy {
+  position: relative;
+  pointer-events: none;
+  padding: 3rem 1.25rem;
+}
+.hero h1 {
+  font: 700 clamp(2.6rem, 9vw, 5.5rem)/1 var(--head);
+  margin: 0 0 1rem;
+  letter-spacing: -0.01em;
+}
+.hero p {
+  max-width: 34rem;
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  font-size: 1.2rem;
+}
+.hero a {
+  pointer-events: auto;
+}
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  border-radius: 0.4rem;
+  text-decoration: none;
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+.btn.alt {
+  background: none;
+  color: var(--text);
+  border: 2px solid var(--line);
+}
+.hint {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 1rem;
+}
+
+section {
+  padding: 3.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+h2 {
+  font: 700 2rem var(--head);
+  margin: 0 0 1.5rem;
+}
+.project {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 1.25rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--line);
+}
+.project:first-of-type {
+  border-top: 0;
+}
+.thumb {
+  width: 7rem;
+  aspect-ratio: 1;
+  border-radius: 0.4rem;
+  display: grid;
+  place-items: center;
+  font: 700 2.2rem var(--head);
+  color: #fff;
+  object-fit: cover;
+}
+.project h3 {
+  margin: 0 0 0.25rem;
+  font: 700 1.35rem var(--head);
+}
+.project p {
+  margin: 0 0 0.6rem;
+  color: var(--muted);
+  max-width: 38rem;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 0.6rem;
+  padding: 0;
+  list-style: none;
+}
+.tags li {
+  font-size: 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  padding: 0.1rem 0.65rem;
+  background: var(--surface);
+}
+.links a {
+  color: var(--accent2);
+  font-weight: 500;
+  margin-right: 1rem;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1.5rem;
+}
+.skills h3 {
+  font: 700 1.1rem var(--head);
+  margin: 0 0 0.5rem;
+  color: var(--accent2);
+}
+.skills p {
+  margin: 0;
+  color: var(--muted);
+}
+.about {
+  display: grid;
+  gap: 1rem;
+  max-width: 40rem;
+}
+.about p {
+  margin: 0;
+}
+footer {
+  padding: 2.5rem 1.25rem 3rem;
+  color: var(--muted);
+}
+footer a {
+  color: var(--accent2);
+  font-weight: 500;
+}
+@media (max-width: 34rem) {
+  .project {
+    grid-template-columns: 1fr;
+  }
+  .thumb {
+    width: 5rem;
+  }
+  nav ul {
+    gap: 0.8rem;
+    font-size: 0.95rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
