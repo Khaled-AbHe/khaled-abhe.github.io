@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Khaled Abou Hechmeh – Aspiring Game Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Pixelify+Sans:wght@500;700&display=swap">
+<style>
+:root{
+  --bg:#f4f3fb;--surface:#ffffff;--text:#1b1936;--muted:#58557a;--line:#d9d6ee;
+  --accent:#d6336c;--accent2:#0e7490;--cell:214,51,108;
+  --head:'Pixelify Sans','Courier New',monospace;--body:'DM Sans',system-ui,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#171629;--surface:#221f3a;--text:#ece9ff;--muted:#a9a5cf;--line:#38345c;
+  --accent:#ff5d8f;--accent2:#6ee7f9;--cell:255,93,143;}}
+:root[data-theme="dark"]{
+  --bg:#171629;--surface:#221f3a;--text:#ece9ff;--muted:#a9a5cf;--line:#38345c;
+  --accent:#ff5d8f;--accent2:#6ee7f9;--cell:255,93,143;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1.0625rem/1.6 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.25rem}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0}
+nav .logo{font:700 1.25rem var(--head);text-decoration:none}
+nav ul{display:flex;gap:1.25rem;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--text)}
+#theme{background:none;border:1px solid var(--line);color:var(--text);border-radius:.5rem;padding:.35rem .6rem;cursor:pointer;font:inherit}
+
+.hero{position:relative;min-height:26rem;display:flex;align-items:center;border-bottom:1px solid var(--line)}
+#grid{position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y}
+.hero-copy{position:relative;pointer-events:none;padding:3rem 0}
+.hero h1{font:700 clamp(2.6rem,9vw,5.5rem)/1 var(--head);margin:0 0 1rem;letter-spacing:-.01em}
+.hero p{max-width:34rem;margin:0 0 1.5rem;color:var(--muted);font-size:1.2rem}
+.hero a{pointer-events:auto}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:.7rem 1.2rem;border-radius:.4rem;text-decoration:none;font-weight:700;margin-right:.5rem}
+.btn.alt{background:none;color:var(--text);border:2px solid var(--line)}
+.hint{font-size:.85rem;color:var(--muted);margin-top:1rem}
+
+section{padding:3.5rem 0;border-bottom:1px solid var(--line)}
+h2{font:700 2rem var(--head);margin:0 0 1.5rem}
+.project{display:grid;grid-template-columns:7rem 1fr;gap:1.25rem;padding:1.25rem 0;border-top:1px solid var(--line)}
+.project:first-of-type{border-top:0}
+.thumb{aspect-ratio:1;border-radius:.4rem;display:grid;place-items:center;font:700 2.2rem var(--head);color:#fff}
+.t1{background:linear-gradient(135deg,var(--accent),#7c3aed)}
+.t2{background:linear-gradient(135deg,#0e7490,#2563eb)}
+.t3{background:linear-gradient(135deg,#ea580c,var(--accent))}
+.project h3{margin:0 0 .25rem;font:700 1.35rem var(--head)}
+.project p{margin:0 0 .6rem;color:var(--muted);max-width:38rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 .6rem;padding:0;list-style:none}
+.tags li{font-size:.85rem;border:1px solid var(--line);border-radius:99px;padding:.1rem .65rem;background:var(--surface)}
+.links a{color:var(--accent2);font-weight:500;margin-right:1rem}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.5rem}
+.skills h3{font:700 1.1rem var(--head);margin:0 0 .5rem;color:var(--accent2)}
+.skills p{margin:0;color:var(--muted)}
+.about{display:grid;gap:1rem;max-width:40rem}
+.about p{margin:0}
+footer{padding:2.5rem 0 3rem;color:var(--muted)}
+footer a{color:var(--accent2);font-weight:500}
+@media (max-width:34rem){
+  .project{grid-template-columns:1fr}.thumb{width:5rem}
+  nav ul{gap:.8rem;font-size:.95rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="logo" href="#top">Khaled Abou Hechmeh</a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="theme" aria-label="Toggle light or dark theme">◐</button>
+  </nav>
+</div>
+
+<header class="hero" id="top">
+  <canvas id="grid" aria-hidden="true"></canvas>
+  <div class="wrap hero-copy">
+    <h1>I build games<br>and learn how they work.</h1>
+    <p>Hi, I’m Khaled, a computer science student at Cégep Marie-Victorin. I’m learning Unity and Godot, and I’m looking for an internship in game development.</p>
+    <a class="btn" href="#projects">See my projects</a><a class="btn alt" href="#contact">Get in touch</a>
+    <div class="hint">Move your mouse or finger over this area to paint the grid.</div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="projects">
+    <h2>Projects</h2>
+    <article class="project">
+      <div class="thumb t1" aria-hidden="true">U</div>
+      <div>
+        <h3>U-Owl</h3>
+        <p>A replica of U-Haul’s rental service, built as a full-stack app with a React and TypeScript frontend and a NestJS backend, run together with Docker Compose.</p>
+        <ul class="tags"><li>React</li><li>TypeScript</li><li>NestJS</li><li>Docker</li></ul>
+        <div class="links"><a href="https://github.com/Khaled-AbHe/U-Owl">Source code</a></div>
+      </div>
+    </article>
+    <article class="project">
+      <div class="thumb t2" aria-hidden="true">A</div>
+      <div>
+        <h3>FRND-ArcaneGrimoire</h3>
+        <p>A website for managing Dungeons &amp; Dragons spellcasting. You can create characters, spells and spell slots.</p>
+        <ul class="tags"><li>React</li><li>TypeScript</li><li>D&amp;D</li></ul>
+        <div class="links"><a href="https://github.com/Khaled-AbHe/FRND-ArcaneGrimoire">Source code</a></div>
+      </div>
+    </article>
+    <article class="project">
+      <div class="thumb t3" aria-hidden="true">P</div>
+      <div>
+        <h3>ProjetFinale: Frog Swing Platformer</h3>
+        <p>My final project for a class: a 2D platformer where you play a frog that swings from place to place with its tongue.</p>
+        <ul class="tags"><li>2D platformer</li><li>Shaders</li><li>Class project</li></ul>
+        <div class="links"><a href="https://github.com/Khaled-AbHe/ProjetFinale">Source code</a></div>
+      </div>
+    </article>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><h3>Languages</h3><p>C#, Java, JavaScript, TypeScript, Python, HTML</p></div>
+      <div><h3>Game dev and design</h3><p>Unity, Godot, GIMP, Figma</p></div>
+      <div><h3>Web and tools</h3><p>React, Node.js, Docker, Git, SQL, Jellyfin media server at home</p></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About me</h2>
+    <div class="about">
+      <p>I’ve loved video games since I was a kid. Now I want to help make games that give people real fun.</p>
+      <p>Besides schoolwork, I learn Unity and Godot and build full-stack web projects based on other games. I also host my own media server with Jellyfin because I like knowing how things work under the hood. I’m looking for an internship.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap" id="contact">
+  <h2>Contact</h2>
+  <p>Email me at <a href="mailto:khaledabouhechmeh@outlook.com">khaledabouhechmeh@outlook.com</a>, or find me on <a href="https://github.com/Khaled-AbHe">GitHub</a> and <a href="https://www.linkedin.com/in/khaled-abou-hechmeh-b77642316/">LinkedIn</a>.</p>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('theme');
+  try{var s=localStorage.getItem('theme');if(s)root.setAttribute('data-theme',s)}catch(e){}
+  btn.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')?root.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+    var next=dark?'light':'dark';root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next)}catch(e){}
+  });
+
+  var c=document.getElementById('grid'),x=c.getContext('2d'),S=28,cols,rows,heat=[];
+  function size(){
+    var r=c.getBoundingClientRect(),d=window.devicePixelRatio||1;
+    c.width=r.width*d;c.height=r.height*d;x.setTransform(d,0,0,d,0,0);
+    cols=Math.ceil(r.width/S);rows=Math.ceil(r.height/S);heat=new Array(cols*rows).fill(0);
+  }
+  function paint(e){
+    var r=c.getBoundingClientRect(),i=Math.floor((e.clientX-r.left)/S),j=Math.floor((e.clientY-r.top)/S);
+    for(var a=-1;a<=1;a++)for(var b=-1;b<=1;b++){
+      var ci=i+a,cj=j+b;if(ci>=0&&cj>=0&&ci<cols&&cj<rows)heat[cj*cols+ci]=Math.max(heat[cj*cols+ci],(a||b)?.5:1);
+    }
+  }
+  c.parentElement.addEventListener('pointermove',paint);
+  c.parentElement.addEventListener('pointerdown',paint);
+  var line=getComputedStyle(root);
+  function draw(){
+    var cs=getComputedStyle(root),rgb=cs.getPropertyValue('--cell').trim(),ln=cs.getPropertyValue('--line').trim();
+    x.clearRect(0,0,c.width,c.height);
+    for(var j=0;j<rows;j++)for(var i=0;i<cols;i++){
+      var h=heat[j*cols+i];
+      x.strokeStyle=ln;x.globalAlpha=.45;x.strokeRect(i*S+.5,j*S+.5,S-1,S-1);
+      if(h>.01){x.globalAlpha=h;x.fillStyle='rgb('+rgb+')';x.fillRect(i*S+3,j*S+3,S-6,S-6);heat[j*cols+i]=h*.94}
+    }
+    x.globalAlpha=1;requestAnimationFrame(draw);
+  }
+  size();addEventListener('resize',size);
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches)draw();
+})();
+</script>
+</body>
+</html>
